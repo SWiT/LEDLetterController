@@ -52,29 +52,29 @@ void loop() {
   if (mode == MODE_OFF) {
     // All letters off
     byte steps = 1;
-    byte patterns[][4] =  {{OFF, OFF, OFF, OFF}};
+    byte patterns[][LETTERS] =  {{OFF, OFF, OFF, OFF}};
     int durations[] = {1000};
     setleds(steps, patterns, durations);
     
   } else if (mode == MODE_ALL_ON) {
     // All letters on
     byte steps = 1;
-    byte patterns[][4] =  {{ON, ON, ON, ON}};
+    byte patterns[][LETTERS] =  {{ON, ON, ON, ON}};
     int durations[] = {1000};
     setleds(steps, patterns, durations);
     
   } else if (mode == MODE_BLINK_EACH) {
     // Blink each letter on/off in succesion.
     byte steps = 8;
-    byte patterns[][4] =  {{ON, OFF, OFF, OFF}
-                          ,{OFF, OFF ,OFF, OFF}
-                          ,{OFF, ON ,OFF, OFF}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{OFF, OFF, ON, OFF}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{OFF, OFF, OFF, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          };
+    byte patterns[][LETTERS] =  {{ON, OFF, OFF, OFF}
+                                ,{OFF, OFF ,OFF, OFF}
+                                ,{OFF, ON ,OFF, OFF}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{OFF, OFF, ON, OFF}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{OFF, OFF, OFF, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                };
     int durations[] = {1000
                        ,1000
                        ,1000
@@ -89,21 +89,21 @@ void loop() {
   } else if (mode == MODE_BLINK_EACH_THEN_ALL) {
     // Blink each letter on/off in succesion then blink then all 3 times
     byte steps = 14;
-    byte patterns[][4] =  {{ON, OFF, OFF, OFF}
-                          ,{OFF, OFF ,OFF, OFF}
-                          ,{OFF, ON ,OFF, OFF}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{OFF, OFF, ON, OFF}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{OFF, OFF, OFF, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{ON, ON, ON, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{ON, ON, ON, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          ,{ON, ON, ON, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          };
+    byte patterns[][LETTERS] =  {{ON, OFF, OFF, OFF}
+                                ,{OFF, OFF ,OFF, OFF}
+                                ,{OFF, ON ,OFF, OFF}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{OFF, OFF, ON, OFF}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{OFF, OFF, OFF, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{ON, ON, ON, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{ON, ON, ON, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                ,{ON, ON, ON, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                };
     int durations[] = {1000
                        ,1000
                        ,1000
@@ -124,9 +124,9 @@ void loop() {
   } else if (mode == MODE_CRAWL) {
     // alternate every other outer led, turn off the middle ones.
     byte steps = 2;
-    byte patterns[][4] =  {{A, A, A, A}
-                          ,{B, B, B, B}
-                          };
+    byte patterns[][LETTERS] =  {{A, A, A, A}
+                                ,{B, B, B, B}
+                                };
     int durations[] = {1000
                       ,1000
                       };
@@ -135,15 +135,15 @@ void loop() {
   } else if (mode == MODE_WAVE) {
     // Turn on each letter in succession, then turn them off in succession.
     byte steps = 8;
-    byte patterns[][4] =  {{ON, OFF, OFF, OFF}
-                          ,{ON, ON, OFF, OFF}
-                          ,{ON, ON, ON, OFF}
-                          ,{ON, ON, ON, ON}
-                          ,{OFF, ON, ON, ON}
-                          ,{OFF, OFF, ON, ON}
-                          ,{OFF, OFF, OFF, ON}
-                          ,{OFF, OFF, OFF, OFF}
-                          };
+    byte patterns[][LETTERS] =  {{ON, OFF, OFF, OFF}
+                                ,{ON, ON, OFF, OFF}
+                                ,{ON, ON, ON, OFF}
+                                ,{ON, ON, ON, ON}
+                                ,{OFF, ON, ON, ON}
+                                ,{OFF, OFF, ON, ON}
+                                ,{OFF, OFF, OFF, ON}
+                                ,{OFF, OFF, OFF, OFF}
+                                };
     int durations[] = {1000
                        ,1000
                        ,1000
